@@ -131,7 +131,7 @@ You will receive a list of past topics from the user, write a blog on a brand ne
 ";
             JObject chatRequest = new JObject
             {
-                { "model", "gpt-4" },
+                { "model", "gpt-3.5-turbo" },
                 { "messages", new JArray { new JObject { { "role", "system" }, { "content", prompt } }, new JObject { { "role", "user" }, { "content", existingPosts } } } }
             };
 
