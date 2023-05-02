@@ -36,36 +36,36 @@ namespace AutoContentGenerator
             }
         }
 
-        public static async Task<string> GenerateImage(string apiKey, string prompt)
-        {
-            using var client = new HttpClient
-            {
-                Timeout = TimeSpan.FromSeconds(600)
-            };
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        // public static async Task<string> GenerateImage(string apiKey, string prompt)
+        // {
+        //     using var client = new HttpClient
+        //     {
+        //         Timeout = TimeSpan.FromSeconds(600)
+        //     };
+        //     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+        //     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            var requestData = new
-            {
-                prompt = "Photorealistic image: " + prompt,
-                n = 1,
-                size = "512x512"
-            };
-            var jsonString = JsonConvert.SerializeObject(requestData);
-            var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync("https://api.openai.com/v1/images/generations", httpContent);
+        //     var requestData = new
+        //     {
+        //         prompt = "Photorealistic image: " + prompt,
+        //         n = 1,
+        //         size = "512x512"
+        //     };
+        //     var jsonString = JsonConvert.SerializeObject(requestData);
+        //     var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+        //     var response = await client.PostAsync("https://api.openai.com/v1/images/generations", httpContent);
 
-            if (response.IsSuccessStatusCode)
-            {
-                var responseString = await response.Content.ReadAsStringAsync();
-                JObject responseObject = JObject.Parse(responseString);
-                return responseObject["data"][0]["url"].ToString();
-            }
-            else
-            {
-                throw new HttpRequestException($"Request failed with status code {response.StatusCode}");
-            }
-        }
+        //     if (response.IsSuccessStatusCode)
+        //     {
+        //         var responseString = await response.Content.ReadAsStringAsync();
+        //         JObject responseObject = JObject.Parse(responseString);
+        //         return responseObject["data"][0]["url"].ToString();
+        //     }
+        //     else
+        //     {
+        //         throw new HttpRequestException($"Request failed with status code {response.StatusCode}");
+        //     }
+        // }
 
     }
 }
