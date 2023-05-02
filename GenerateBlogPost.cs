@@ -22,7 +22,7 @@ namespace AutoContentGenerator
     public class BlogPost {
         public string Title { get; set; }
         public string Content { get; set; }
-        public string ImageURL { get; set; }
+        // public string ImageURL { get; set; }
     }
     public static class GenerateBlogPost
     {
@@ -64,9 +64,9 @@ namespace AutoContentGenerator
             await File.WriteAllTextAsync(newFilePath, markdownContent);
 
             // Download and save the image
-            string imagesPath = Path.Combine(clonePath, "public/images/posts");
-            string imageFileName = $"{blogPost.Title}.png";
-            string savedImagePath = await DownloadAndSaveImage(blogPost.ImageURL, imageFileName, imagesPath);
+            // string imagesPath = Path.Combine(clonePath, "public/images/posts");
+            // string imageFileName = $"{blogPost.Title}.png";
+            // string savedImagePath = await DownloadAndSaveImage(blogPost.ImageURL, imageFileName, imagesPath);
 
             string newBranchName;
             // Commit the new file
@@ -79,7 +79,7 @@ namespace AutoContentGenerator
 
                 // Add the new file and commit
                 Commands.Stage(repo, newFilePath);
-                Commands.Stage(repo, savedImagePath);
+                // Commands.Stage(repo, savedImagePath);
                 var author = new LibGit2Sharp.Signature("GPT-Blog-Writer", System.Environment.GetEnvironmentVariable("GitHubEmail"), DateTimeOffset.Now);
                 repo.Commit("Add new blog post", author, author);
 
@@ -155,11 +155,11 @@ You will receive a list of past topics from the user, write a blog on a brand ne
                     }
                 }
             }
-            var imageUrl = await OpenAIService.GenerateImage(apiKey, title);
+            // var imageUrl = await OpenAIService.GenerateImage(apiKey, title);
             var blogPost = new BlogPost();
             blogPost.Title = ToKebabCase(title);
             blogPost.Content = response;
-            blogPost.ImageURL = imageUrl;
+            // blogPost.ImageURL = imageUrl;
             return blogPost;
         }
 
@@ -170,27 +170,27 @@ You will receive a list of past topics from the user, write a blog on a brand ne
             return string.Join("-", words.Where(word => !string.IsNullOrWhiteSpace(word)));
         }
 
-        public static async Task<string> DownloadAndSaveImage(string imageUrl, string fileName, string savePath)
-        {
-            using var httpClient = new HttpClient();
-            var response = await httpClient.GetAsync(imageUrl);
+        // public static async Task<string> DownloadAndSaveImage(string imageUrl, string fileName, string savePath)
+        // {
+        //     using var httpClient = new HttpClient();
+        //     var response = await httpClient.GetAsync(imageUrl);
 
-            if (response.IsSuccessStatusCode)
-            {
-                var imageBytes = await response.Content.ReadAsByteArrayAsync();
+        //     if (response.IsSuccessStatusCode)
+        //     {
+        //         var imageBytes = await response.Content.ReadAsByteArrayAsync();
 
-                // Create the directory if it doesn't exist
-                Directory.CreateDirectory(savePath);
+        //         // Create the directory if it doesn't exist
+        //         Directory.CreateDirectory(savePath);
 
-                var filePath = Path.Combine(savePath, fileName);
-                await File.WriteAllBytesAsync(filePath, imageBytes);
-                return filePath;
-            }
-            else
-            {
-                throw new HttpRequestException($"Request failed with status code {response.StatusCode}");
-            }
-        }
+        //         var filePath = Path.Combine(savePath, fileName);
+        //         await File.WriteAllBytesAsync(filePath, imageBytes);
+        //         return filePath;
+        //     }
+        //     else
+        //     {
+        //         throw new HttpRequestException($"Request failed with status code {response.StatusCode}");
+        //     }
+        // }
 
     }
 }

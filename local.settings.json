@@ -3,11 +3,11 @@
     "Values": {
       "AzureWebJobsStorage": "UseDevelopmentStorage=true",
       "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-      "GitHubToken": "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",
+      "GitHubToken": "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",
       "GitHubRepoOwner": "lucianobfs",
       "GitHubEmail": "lucianobfsantana@hotmail.com",
       "GitHubRepoName": "blogKon",
       "GitHubPostsDirectory": "posts",
-      "OpenAIKey": "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"
+      "OpenAIKey": "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"
     }
   }
