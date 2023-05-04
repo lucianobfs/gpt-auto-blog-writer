@@ -39,11 +39,20 @@ namespace AutoContentGenerator
             string repoName = System.Environment.GetEnvironmentVariable("GitHubRepoName");
             string postsDirectory = System.Environment.GetEnvironmentVariable("GitHubPostsDirectory");
 
+        log.LogInformation(gitHubToken);
+        log.LogInformation(repoOwner); 
+        log.LogInformation(repoName); 
+        log.LogInformation(postsDirectory);
+
+        log.LogInformation("GitHub configuration from environment variables readed");
+
             // Initialize GitHub client
             var gitHubClient = new GitHubClient(new Octokit.ProductHeaderValue("AutoContentGenerator"))
             {
                 Credentials = new Octokit.Credentials(repoOwner, gitHubToken)
             };
+
+            log.LogInformation("GitHub client Initialized"); 
 
             // Clone the repository
             string repoUrl = $"https://github.com/{repoOwner}/{repoName}.git";
@@ -56,6 +65,8 @@ namespace AutoContentGenerator
             string[] fileNames = filePaths.Select(Path.GetFileName).ToArray();
             string filesList = string.Join("\n", fileNames);
 
+            log.LogInformation("Repository cloned"); 
+
             // Generate the new Markdown file
             var blogPost = await WriteBlogPost(filesList);
 
@@ -63,7 +74,10 @@ namespace AutoContentGenerator
             string newFilePath = Path.Combine(clonePath, postsDirectory, blogPost.Title + ".md");
             await File.WriteAllTextAsync(newFilePath, markdownContent);
 
+            log.LogInformation("Markdown file generated"); 
+
             // Download and save the image
+
             // string imagesPath = Path.Combine(clonePath, "public/images/posts");
             // string imageFileName = $"{blogPost.Title}.png";
             // string savedImagePath = await DownloadAndSaveImage(blogPost.ImageURL, imageFileName, imagesPath);
@@ -96,6 +110,8 @@ namespace AutoContentGenerator
                 var email = gitHubClient.User.Email;
                 var createdPr = await gitHubClient.PullRequest.Create(repoOwner, repoName, pr);
 
+                log.LogInformation("pull request created"); 
+
                 return new OkObjectResult(createdPr.HtmlUrl);
             }
             catch (Octokit.ApiValidationException ex)
@@ -109,6 +125,9 @@ namespace AutoContentGenerator
         public static async Task<BlogPost> WriteBlogPost(string existingPosts)
         {
             string apiKey = System.Environment.GetEnvironmentVariable("OpenAIKey");
+
+            log.LogInformation(apiKey); 
+
             string prompt = @$"
 You are a blog writer for my blog on tea called Tea Treasury, at teatreasury.com
 This is a blog all about tea - we cover all aspects essential and tangential related to tea, tea production, tea consumption, etc.
