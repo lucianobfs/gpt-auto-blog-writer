@@ -135,17 +135,17 @@ Use markdown ao criar a página.
 Não coloque o título em uma tag h1 no início do artigo, pois ele será adicionado separadamente através da página do meu blog.
 Vale lembrar que o público-alvo são pessoas de 25 a 64 anos, com nível de escolaridade um pouco superior à média do Brasil, mas com um pouco de dificuldade em se aprofundar em assuntos mais complexos como finanças, por isso os textos além de agregar valor real, devem utilizar recursos como storytelling, exemplos, aplicabilidade prática e citação de outros conteúdos para não perder a atenção dos leitores. Crie consciência e estabilidade na vida financeira dessas pessoas para que elas não precisem se endividar e caso se endividem usem apenas o empréstimo consignado, então faz parte do seu papel ensiná-los sobre porquê o empréstimo consignado é o melhor tipo de empréstimo do Brasil e sobre seus tipos de operações, pois muitos podem usar mas não usam porque não entendem e as vezes acabam pagando juros rotativos no cartão de crédito, que é bem mais caro que um empréstimo consignado, por exemplo. Mas lembre-se de que seu principal objetivo é mantê-los livres de dívidas. Não faça com que pareça um post de vendas.
 A data de hoje é {DateTime.Now.ToString("yyyy-MM-dd")}.
-Inclua o frontmatter em sua página no seguinte formato:
+Include frontmatter on your page in the following format:
 ---
-título: ""<título>""
-data: ""{DateTime.Now.ToString("yyyy-MM-dd")}""
-autor: ""Redação Konsi""
+title: ""<título>""
+date: ""{DateTime.Now.ToString("yyyy-MM-dd")}""
+author: ""Redação Konsi""
 tags:
 - ""<tag1>""
 - ""<tag2>""
 - ""<tag3>""
 ---
-Você receberá uma lista de tópicos anteriores do usuário, escreva um blog post sobre um novo tópico não listado. Não repita um tópico já abordado. Matenha o texto com 1000+ palavras. Otimize o texto com boas práticas de SEO. Faça de uma forma que o conteúdo não seja detectável que foi escrito por uma inteligência artificial.
+You will receive a list of past topics from the user, write a blog on a brand new topic not listed. Do not repeat a topic already covered. Aim for 1000+ words. Make it SEO optimized.
 ";
             JObject chatRequest = new JObject
             {

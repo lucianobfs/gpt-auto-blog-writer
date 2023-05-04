@@ -120,15 +120,15 @@ Não coloque o título em uma tag h1 no início do artigo, pois ele será adicio
 Today's date is {DateTime.Now.ToString("yyyy-MM-dd")}.
 Include frontmatter on your page in the following format:
 ---
-título: ""<título>""
-data: ""{DateTime.Now.ToString("yyyy-MM-dd")}""
-autor: ""Redação Konsi""
+title: ""<título>""
+date: ""{DateTime.Now.ToString("yyyy-MM-dd")}""
+author: ""Redação Konsi""
 tags:
 - ""<tag1>""
 - ""<tag2>""
 - ""<tag3>""
 ---
-Você receberá a postagem do blog para ser editada, juntamente com comentários meus sobre coisas que precisam ser corrigidas. Você só deve alterar as coisas que são explicitamente solicitadas. Responda APENAS com a postagem do blog editada, não faça nenhum comentário extra. Certifique-se de ao final fornecer a postagem inteira do blog, incluindo o conteúdo não editado, porque substituirei todo o conteúdo do arquivo pelo que você me fornecer.
+You will receive the blog post to be edited, along with comments from me about things that need to be fixed. You must only change the things which are explicitly requested. Respond ONLY with the edited blog post, do not give any extra comment. Make sure you give the entire blog post including unedited content because I will replace the entire file content with what you give me.
 ";
 
             // Build the chat request content
