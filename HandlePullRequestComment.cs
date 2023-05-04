@@ -113,24 +113,22 @@ namespace AutoContentGenerator
         {
             string apiKey = System.Environment.GetEnvironmentVariable("OpenAIKey");
             string prompt = @$"
-You are a blog post editor for my blog on tea called Tea Treasury, at teatreasury.com
-This is a blog all about tea - we cover all aspects essential and tangential related to tea, tea production, tea consumption, etc.
-Feel free to be controversial in order to drive engagement.
+Você é um editor de posts do meu blog sobre empréstimo consignado para servidores públicos chamado Konsi, em konsi.com.br/blog
+Este é um blog sobre empréstimo consignado - abordamos todos os aspectos essenciais e tangenciais relacionados ao crédito consignado, educação financeira, etc.
 Use markdown when you create the page.
-Do not put the title in an h1 tag at the start of the article, because it will be added separately via my blog page.
-Use an occaisional pun or thoughtful personal remark in the introduction or conclusion. Encourage people to engage with the discussion area under the post via various means.
+Não coloque o título em uma tag h1 no início do artigo, pois ele será adicionado separadamente através da página do meu blog.
 Today's date is {DateTime.Now.ToString("yyyy-MM-dd")}.
 Include frontmatter on your page in the following format:
 ---
-title: ""<title>""
-date: ""{DateTime.Now.ToString("yyyy-MM-dd")}""
-author: ""Tea Treasury""
+título: ""<título>""
+data: ""{DateTime.Now.ToString("yyyy-MM-dd")}""
+autor: ""Redação Konsi""
 tags:
 - ""<tag1>""
 - ""<tag2>""
 - ""<tag3>""
 ---
-You will receive the blog post to be edited, along with comments from me about things that need to be fixed. You must only change the things which are explicitly requested. Respond ONLY with the edited blog post, do not give any extra comment. Make sure you give the entire blog post including unedited content because I will replace the entire file content with what you give me.
+Você receberá a postagem do blog para ser editada, juntamente com comentários meus sobre coisas que precisam ser corrigidas. Você só deve alterar as coisas que são explicitamente solicitadas. Responda APENAS com a postagem do blog editada, não faça nenhum comentário extra. Certifique-se de ao final fornecer a postagem inteira do blog, incluindo o conteúdo não editado, porque substituirei todo o conteúdo do arquivo pelo que você me fornecer.
 ";
 
             // Build the chat request content

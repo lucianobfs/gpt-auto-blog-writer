@@ -140,7 +140,7 @@ Inclua o frontmatter em sua página no seguinte formato:
 título: ""<título>""
 data: ""{DateTime.Now.ToString("yyyy-MM-dd")}""
 autor: ""Redação Konsi""
-Tag:
+tags:
 - ""<tag1>""
 - ""<tag2>""
 - ""<tag3>""
