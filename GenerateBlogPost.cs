@@ -39,10 +39,10 @@ namespace AutoContentGenerator
             string repoName = System.Environment.GetEnvironmentVariable("GitHubRepoName");
             string postsDirectory = System.Environment.GetEnvironmentVariable("GitHubPostsDirectory");
 
-        log.LogInformation(gitHubToken);
-        log.LogInformation(repoOwner); 
-        log.LogInformation(repoName); 
-        log.LogInformation(postsDirectory);
+        // log.LogInformation(gitHubToken);
+        // log.LogInformation(repoOwner); 
+        // log.LogInformation(repoName); 
+        // log.LogInformation(postsDirectory);
 
         log.LogInformation("GitHub configuration from environment variables readed");
 
@@ -126,7 +126,7 @@ namespace AutoContentGenerator
         {
             string apiKey = System.Environment.GetEnvironmentVariable("OpenAIKey");
 
-            log.LogInformation(apiKey); 
+            // log.LogInformation(apiKey); 
 
             string prompt = @$"
 You are a blog writer for my blog on tea called Tea Treasury, at teatreasury.com
