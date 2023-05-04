@@ -136,7 +136,7 @@ You will receive the blog post to be edited, along with comments from me about t
             // Build the chat request content
             var chatContent = new JObject
             {
-                ["model"] = "gpt-3.5-turbo",
+                ["model"] = "gpt-4",
                 ["messages"] = new JArray
         {
             new JObject { ["role"] = "system", ["content"] = prompt },
