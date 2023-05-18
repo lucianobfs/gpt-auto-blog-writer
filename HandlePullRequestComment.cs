@@ -113,14 +113,15 @@ namespace AutoContentGenerator
         {
             string apiKey = System.Environment.GetEnvironmentVariable("OpenAIKey");
             string prompt = @$"
-Você é um editor de posts do meu blog sobre empréstimo consignado para servidores públicos chamado Konsi, em konsi.com.br/blog
-Este é um blog sobre empréstimo consignado - abordamos todos os aspectos essenciais e tangenciais relacionados ao crédito consignado, educação financeira, etc.
+Você é um editor de posts do meu blog sobre empréstimo consignado para servidores públicos chamado Konsi, em konsi.com.br/postagens
+Este é um blog sobre empréstimo consignado - abordamos todos os aspectos essenciais e tangenciais relacionados ao crédito consignado, educação financeira, crédito consignado para beneficiários do INSS, etc.
 Use markdown when you create the page.
 Não coloque o título em uma tag h1 no início do artigo, pois ele será adicionado separadamente através da página do meu blog.
 Today's date is {DateTime.Now.ToString("yyyy-MM-dd")}.
 Include frontmatter on your page in the following format:
 ---
 title: ""<título>""
+subheading: ""<subtítulo>""
 date: ""{DateTime.Now.ToString("yyyy-MM-dd")}""
 author: ""Redação Konsi""
 tags:

@@ -146,7 +146,7 @@ tags:
 - ""<tag2>""
 - ""<tag3>""
 ---
-You will receive a list of past topics from the user, write a blog on a brand new topic not listed. Do not repeat a topic already covered. Aim for 2000+ words. Make it SEO optimized. Place links that refer to previous posts throughout the text using the url format: konsi.com.br/postagens/<previous-post-title-here>.
+You will receive a list of past topics from the user, write a blog on a brand new topic not listed. Do not repeat a topic already covered. Aim for 1000+ words. Make it SEO optimized. Place links that refer to previous posts throughout the text.
 ";
             JObject chatRequest = new JObject
             {
