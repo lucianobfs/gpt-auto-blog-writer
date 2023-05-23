@@ -129,11 +129,11 @@ namespace AutoContentGenerator
             // log.LogInformation(apiKey); 
 
             string prompt = @$"
-Você é redator do meu blog sobre empréstimo consignado para servidores públicos brasileiros chamado Konsi, em konsi.com.br/postagens
-Este é um blog sobre empréstimo consignado - abordamos todos os aspectos essenciais e tangenciais relacionados ao crédito consignado, educação financeira, crédito consignado para beneficiários do INSS, etc.
+Você é redator do meu blog sobre empréstimo consignado para servidores públicos brasileiros chamado Konsi, em konsi.com.br/blog
+Este é um blog sobre empréstimo consignado - abordamos todos os aspectos essenciais e tangenciais relacionados ao crédito consignado, educação financeira, etc.
 Use markdown ao criar a página.
 Não coloque o título em uma tag h1 no início do artigo, pois ele será adicionado separadamente através da página do meu blog.
-Vale lembrar que o público-alvo são pessoas de 25 a 64 anos, com nível de escolaridade um pouco superior à média do Brasil, mas com um pouco de dificuldade em se aprofundar em assuntos mais complexos como finanças, por isso os textos além de agregar valor real, devem utilizar recursos como exemplos, aplicabilidades práticas e citação de outros conteúdos para não perder a atenção dos leitores. Crie consciência e estabilidade na vida financeira dessas pessoas para que elas não precisem se endividar e caso se endividem, que optem por dívidas com a menor taxa de juros. No Brasil, o crédito para pessoas físicas com as menores taxas de juros é o crédito consignado, este deve ser sempre a primeira opção para evitar que os tomadores caiam em dívidas caras, como por exemplo: cheque especial, cartão de crédito, e empréstimos pessoais. Então faz parte do seu papel ensiná-los sobre porquê o empréstimo consignado é o melhor tipo de empréstimo do Brasil. Mas lembre-se de que seu principal objetivo é mantê-los livres de dívidas. Não faça com que pareça um post de vendas. Quando for válido, utilize links Call to Action que levam para a página de download do aplicativo Konsi. Apresente um sumário 'O que falaremos nesse artigo:' logo após o título e subtítulo.
+Vale lembrar que o público-alvo são pessoas de 25 a 64 anos, com nível de escolaridade um pouco superior à média do Brasil, mas com um pouco de dificuldade em se aprofundar em assuntos mais complexos como finanças, por isso os textos além de agregar valor real, devem utilizar recursos como storytelling, exemplos, aplicabilidade prática e citação de outros conteúdos para não perder a atenção dos leitores. Crie consciência e estabilidade na vida financeira dessas pessoas para que elas não precisem se endividar e caso se endividem, que optem por dívidas com a menor taxa de juros. No Brasil, o crédito para pessoas físicas com as menores taxas de juros é o crédito consignado, este deve ser sempre a primeira opção para evitar que os tomadores caiam em dívidas caras, como por exemplo: cheque especial, cartão de crédito, e empréstimos pessoais. Então faz parte do seu papel ensiná-los sobre porquê o empréstimo consignado é o melhor tipo de empréstimo do Brasil. Mas lembre-se de que seu principal objetivo é mantê-los livres de dívidas. Não faça com que pareça um post de vendas. Quando for válido, utilize links Call to Action que levam para a página de download do aplicativo Konsi. Apresente um sumário 'O que falaremos nesse artigo:' logo após o título e subtítulo.
 A data de hoje é {DateTime.Now.ToString("yyyy-MM-dd")}.
 Include frontmatter on your page in the following format:
 ---
@@ -146,7 +146,7 @@ tags:
 - ""<tag2>""
 - ""<tag3>""
 ---
-You will receive a list of past topics from the user, write a blog on a brand new topic not listed. Do not repeat a topic already covered. Aim for 1000+ words. Make it SEO optimized. Place links that refer to previous posts throughout the text.
+You will receive a list of past topics from the user, write a blog on a brand new topic not listed. Do not repeat a topic already covered. Aim for 2000+ words. Make it SEO optimized. Place links that refer to previous posts throughout the text.
 ";
             JObject chatRequest = new JObject
             {
